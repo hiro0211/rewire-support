@@ -39,6 +39,31 @@
       font-size: 15px;
     }
 
+    .lang-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      padding: 16px 20px 0;
+    }
+    .lang-toggle button {
+      background: transparent;
+      color: #6B6B7B;
+      border: 1px solid #1F1F2C;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .lang-toggle button.active {
+      background: #16161E;
+      color: #E8E8ED;
+      border-color: #2A2A38;
+    }
+    .lang-toggle button:hover { color: #E8E8ED; }
+
     nav {
       display: flex;
       justify-content: center;
@@ -81,6 +106,12 @@
       color: #E8E8ED;
     }
     h2:first-child { margin-top: 0; }
+
+    h3.sub {
+      font-size: 16px;
+      color: #E8E8ED;
+      margin: 16px 0 8px;
+    }
 
     p, li {
       font-size: 15px;
@@ -151,177 +182,362 @@
 <body>
 
   <div class="header">
-    <img src="icon.png" alt="Rewire アイコン">
+    <img src="icon.png" alt="Rewire">
     <h1>Rewire</h1>
-    <p>ポルノをやめる習慣改善アプリ</p>
+    <p>
+      <span class="lang-ja">ポルノをやめる習慣改善アプリ</span>
+      <span class="lang-en" hidden>A habit-improvement app for quitting porn</span>
+    </p>
+  </div>
+
+  <div class="lang-toggle">
+    <button data-lang="ja" class="active">日本語</button>
+    <button data-lang="en">English</button>
   </div>
 
   <nav id="nav">
-    <a href="#support" class="active" onclick="showPage('support')">サポート</a>
-    <a href="#faq" onclick="showPage('faq')">よくある質問</a>
-    <a href="#privacy" onclick="showPage('privacy')">プライバシーポリシー</a>
-    <a href="#terms" onclick="showPage('terms')">利用規約</a>
+    <a href="#support" class="active" data-page="support">
+      <span class="lang-ja">サポート</span><span class="lang-en" hidden>Support</span>
+    </a>
+    <a href="#faq" data-page="faq">
+      <span class="lang-ja">よくある質問</span><span class="lang-en" hidden>FAQ</span>
+    </a>
+    <a href="#privacy" data-page="privacy">
+      <span class="lang-ja">プライバシーポリシー</span><span class="lang-en" hidden>Privacy Policy</span>
+    </a>
+    <a href="#terms" data-page="terms">
+      <span class="lang-ja">利用規約</span><span class="lang-en" hidden>Terms of Service</span>
+    </a>
   </nav>
 
   <div class="container">
 
-    <!-- サポート -->
+    <!-- ============================ -->
+    <!-- Support                       -->
+    <!-- ============================ -->
     <div id="support" class="page active">
-      <h2>お問い合わせ</h2>
-      <p>Rewireに関するご質問、不具合の報告、ご要望がございましたら、以下のメールアドレスまでお気軽にご連絡ください。</p>
+      <div class="lang-ja">
+        <h2>お問い合わせ</h2>
+        <p>Rewireに関するご質問、不具合の報告、ご要望がございましたら、以下のメールアドレスまでお気軽にご連絡ください。</p>
 
-      <div class="contact-card">
-        <h3>メールでのお問い合わせ</h3>
-        <p><a href="mailto:appsupport0326@gmail.com">appsupport0326@gmail.com</a></p>
-        <p style="font-size:13px; color:#6B6B7B;">通常2営業日以内にご返信いたします。</p>
+        <div class="contact-card">
+          <h3>メールでのお問い合わせ</h3>
+          <p><a href="mailto:appsupport0326@gmail.com">appsupport0326@gmail.com</a></p>
+          <p style="font-size:13px; color:#6B6B7B;">通常2営業日以内にご返信いたします。</p>
+        </div>
+
+        <h2>サブスクリプションの管理</h2>
+        <p>Rewire Proの解約・プラン変更は、iPhoneの設定から行えます。</p>
+        <ul>
+          <li>「設定」アプリを開く</li>
+          <li>自分の名前（Apple ID）をタップ</li>
+          <li>「サブスクリプション」をタップ</li>
+          <li>「Rewire」を選択して管理</li>
+        </ul>
+
+        <h2>データの削除</h2>
+        <p>アプリ内のすべてのデータを削除するには、アプリの「設定」→「データをリセット」を選択してください。アプリをアンインストールすることでもすべてのデータが削除されます。</p>
       </div>
 
-      <h2>サブスクリプションの管理</h2>
-      <p>Rewire Proの解約・プラン変更は、iPhoneの設定から行えます。</p>
-      <ul>
-        <li>「設定」アプリを開く</li>
-        <li>自分の名前（Apple ID）をタップ</li>
-        <li>「サブスクリプション」をタップ</li>
-        <li>「Rewire」を選択して管理</li>
-      </ul>
+      <div class="lang-en" hidden>
+        <h2>Contact Us</h2>
+        <p>For questions about Rewire, bug reports, or feature requests, please feel free to reach out to us at the email address below.</p>
 
-      <h2>データの削除</h2>
-      <p>アプリ内のすべてのデータを削除するには、アプリの「設定」→「データをリセット」を選択してください。アプリをアンインストールすることでもすべてのデータが削除されます。</p>
+        <div class="contact-card">
+          <h3>Email Support</h3>
+          <p><a href="mailto:appsupport0326@gmail.com">appsupport0326@gmail.com</a></p>
+          <p style="font-size:13px; color:#6B6B7B;">We typically respond within 2 business days.</p>
+        </div>
+
+        <h2>Managing Your Subscription</h2>
+        <p>You can cancel or change your Rewire Pro plan from your iPhone settings.</p>
+        <ul>
+          <li>Open the <strong>Settings</strong> app</li>
+          <li>Tap your name (Apple ID)</li>
+          <li>Tap <strong>Subscriptions</strong></li>
+          <li>Select <strong>Rewire</strong> to manage</li>
+        </ul>
+
+        <h2>Deleting Your Data</h2>
+        <p>To delete all data inside the app, go to <strong>Settings → Reset Data</strong> within the app. Uninstalling the app will also delete all locally stored data.</p>
+      </div>
     </div>
 
-    <!-- よくある質問 -->
+    <!-- ============================ -->
+    <!-- FAQ                           -->
+    <!-- ============================ -->
     <div id="faq" class="page">
-      <h2>よくある質問</h2>
+      <div class="lang-ja">
+        <h2>よくある質問</h2>
 
-      <div class="faq-item">
-        <h3>Q. Rewireとはどんなアプリですか？</h3>
-        <p>Rewireは、ポルノ視聴習慣を改善したい方のためのセルフケアアプリです。毎日の振り返り記録、連続クリア日数の可視化、衝動が来たときの深呼吸エクササイズなどの機能を提供しています。</p>
+        <div class="faq-item">
+          <h3>Q. Rewireとはどんなアプリですか？</h3>
+          <p>Rewireは、ポルノ視聴習慣を改善したい方のためのセルフケアアプリです。毎日の振り返り記録、連続クリア日数の可視化、衝動が来たときの深呼吸エクササイズなどの機能を提供しています。</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q. 記録したデータは外部に送信されますか？</h3>
+          <p>チェックインデータや呼吸エクササイズの記録などの日常利用データは、お使いのデバイス上にのみ保存され、暗号化されています。外部サーバーへの送信は行いません。ただし、アンケート回答データは、サービス改善の目的でFirebase（Google Cloud）に送信されます。送信されるデータに氏名やメールアドレス等の個人を直接特定できる情報は含まれません。</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q. Rewire Proでは何ができますか？</h3>
+          <p>Rewire Proでは、Safariのポルノブロッカー機能、ウィジェット対応、実績バッジ、デイリーチェックイン、SOS呼吸法、ストリーク可視化などのすべての機能をご利用いただけます。月額プラン（¥680/月）と年額プラン（¥5,400/年）があり、いずれも3日間の無料トライアル付きです。</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q. 料金プランについて教えてください</h3>
+          <p>月額プラン（¥680/月）と年額プラン（¥5,400/年）をご用意しています。また、初回限定で69%OFFの年額特別割引プラン（¥2,500/年）や、3日間の無料トライアルをご利用いただける場合があります。</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q. サブスクリプションを解約するには？</h3>
+          <p>iPhoneの「設定」→ 自分の名前 →「サブスクリプション」→「Rewire」から解約できます。無料トライアル期間中に解約すれば、料金は発生しません。</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q. データを完全に削除したいです</h3>
+          <p>アプリの「設定」→「データをリセット」からすべてのデータを削除できます。また、アプリをアンインストールすることでもデバイス上のすべてのデータが削除されます。</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q. ポルノブロッカーの設定方法は？</h3>
+          <p>Rewire Proに加入後、アプリの「設定」からポルノブロッカーを有効にしてください。その後、iPhoneの「設定」→「Safari」→「機能拡張」から「Rewire」を有効にすることで、Safariでのアダルトサイトへのアクセスが自動的にブロックされます。</p>
+        </div>
       </div>
 
-      <div class="faq-item">
-        <h3>Q. 記録したデータは外部に送信されますか？</h3>
-        <p>チェックインデータや呼吸エクササイズの記録などの日常利用データは、お使いのデバイス上にのみ保存され、暗号化されています。外部サーバーへの送信は行いません。ただし、アンケート回答データは、サービス改善の目的でFirebase（Google Cloud）に送信されます。送信されるデータに氏名やメールアドレス等の個人を直接特定できる情報は含まれません。</p>
-      </div>
+      <div class="lang-en" hidden>
+        <h2>Frequently Asked Questions</h2>
 
-      <div class="faq-item">
-        <h3>Q. Rewire Proでは何ができますか？</h3>
-        <p>Rewire Proでは、Safariのポルノブロッカー機能、ウィジェット対応、実績バッジ、デイリーチェックイン、SOS呼吸法、ストリーク可視化などのすべての機能をご利用いただけます。月額プラン（¥680/月）と年額プラン（¥5,400/年）があり、いずれも3日間の無料トライアル付きです。</p>
-      </div>
+        <div class="faq-item">
+          <h3>Q. What kind of app is Rewire?</h3>
+          <p>Rewire is a self-care app for people who want to improve their porn-viewing habits. It offers features such as daily reflection logging, streak visualization of porn-free days, and breathing exercises for moments when urges arise.</p>
+        </div>
 
-      <div class="faq-item">
-        <h3>Q. 料金プランについて教えてください</h3>
-        <p>月額プラン（¥680/月）と年額プラン（¥5,400/年）をご用意しています。また、初回限定で69%OFFの年額特別割引プラン（¥2,500/年）や、3日間の無料トライアルをご利用いただける場合があります。</p>
-      </div>
+        <div class="faq-item">
+          <h3>Q. Is my recorded data sent to external servers?</h3>
+          <p>Daily usage data such as check-ins and breathing exercise records is stored only on your device and is encrypted. It is not sent to external servers. However, survey response data is sent to Firebase (Google Cloud) for service improvement purposes. This data does not include any personally identifiable information such as your name or email address.</p>
+        </div>
 
-      <div class="faq-item">
-        <h3>Q. サブスクリプションを解約するには？</h3>
-        <p>iPhoneの「設定」→ 自分の名前 →「サブスクリプション」→「Rewire」から解約できます。無料トライアル期間中に解約すれば、料金は発生しません。</p>
-      </div>
+        <div class="faq-item">
+          <h3>Q. What does Rewire Pro include?</h3>
+          <p>Rewire Pro unlocks all features, including the Safari porn blocker, widget support, achievement badges, daily check-ins, the SOS breathing tool, and streak visualization. Plans include a monthly subscription ($4.99/month) and an annual subscription ($39.99/year), both with a 3-day free trial.</p>
+        </div>
 
-      <div class="faq-item">
-        <h3>Q. データを完全に削除したいです</h3>
-        <p>アプリの「設定」→「データをリセット」からすべてのデータを削除できます。また、アプリをアンインストールすることでもデバイス上のすべてのデータが削除されます。</p>
-      </div>
+        <div class="faq-item">
+          <h3>Q. Can you tell me about the pricing plans?</h3>
+          <p>We offer a Monthly plan ($4.99/month) and an Annual plan ($39.99/year). A limited-time introductory offer with a discounted annual price and a 3-day free trial may also be available for first-time subscribers.</p>
+        </div>
 
-      <div class="faq-item">
-        <h3>Q. ポルノブロッカーの設定方法は？</h3>
-        <p>Rewire Proに加入後、アプリの「設定」からポルノブロッカーを有効にしてください。その後、iPhoneの「設定」→「Safari」→「機能拡張」から「Rewire」を有効にすることで、Safariでのアダルトサイトへのアクセスが自動的にブロックされます。</p>
+        <div class="faq-item">
+          <h3>Q. How do I cancel my subscription?</h3>
+          <p>You can cancel via iPhone <strong>Settings → your name → Subscriptions → Rewire</strong>. If you cancel during the free trial period, you will not be charged.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q. I want to completely delete my data.</h3>
+          <p>You can delete all data from within the app via <strong>Settings → Reset Data</strong>. Uninstalling the app will also delete all locally stored data.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q. How do I set up the porn blocker?</h3>
+          <p>After subscribing to Rewire Pro, enable the porn blocker from <strong>Settings</strong> inside the app. Then go to iPhone <strong>Settings → Safari → Extensions</strong> and enable <strong>Rewire</strong>. Access to adult sites in Safari will then be automatically blocked.</p>
+        </div>
       </div>
     </div>
 
-    <!-- プライバシーポリシー -->
+    <!-- ============================ -->
+    <!-- Privacy Policy                -->
+    <!-- ============================ -->
     <div id="privacy" class="page">
-      <h2>プライバシーポリシー</h2>
-      <p class="updated-date">最終更新日: 2026年3月22日</p>
+      <div class="lang-ja">
+        <h2>プライバシーポリシー</h2>
+        <p class="updated-date">最終更新日: 2026年3月22日</p>
 
-      <h2>1. はじめに</h2>
-      <p>Rewire（以下「本アプリ」）は、ユーザーの自己管理と習慣改善を支援するアプリケーションです。本プライバシーポリシーでは、本アプリにおける個人情報の取り扱いについて説明します。</p>
+        <h2>1. はじめに</h2>
+        <p>Rewire（以下「本アプリ」）は、ユーザーの自己管理と習慣改善を支援するアプリケーションです。本プライバシーポリシーでは、本アプリにおける個人情報の取り扱いについて説明します。</p>
 
-      <h2>2. 収集するデータ</h2>
-      <p>本アプリでは、以下のデータを収集・記録します。</p>
-      <h3 style="font-size:16px; color:#E8E8ED; margin:16px 0 8px;">デバイス上に保存されるデータ</h3>
-      <ul>
-        <li>性的行動に関する記録</li>
-        <li>メンタルヘルスに関するデータ</li>
-        <li>呼吸エクササイズの記録</li>
-        <li>回復の進捗記録</li>
-        <li>ニックネーム</li>
-        <li>アプリ内の設定情報</li>
-      </ul>
-      <h3 style="font-size:16px; color:#E8E8ED; margin:16px 0 8px;">サーバーに送信されるデータ</h3>
-      <ul>
-        <li>アンケート回答データ（年齢層、アプリの認知経路、利用動機、改善の実感など）</li>
-        <li>匿名化された利用状況データ（Firebase Analytics）</li>
-        <li>匿名ユーザーID</li>
-      </ul>
+        <h2>2. 収集するデータ</h2>
+        <p>本アプリでは、以下のデータを収集・記録します。</p>
+        <h3 class="sub">デバイス上に保存されるデータ</h3>
+        <ul>
+          <li>性的行動に関する記録</li>
+          <li>メンタルヘルスに関するデータ</li>
+          <li>呼吸エクササイズの記録</li>
+          <li>回復の進捗記録</li>
+          <li>ニックネーム</li>
+          <li>アプリ内の設定情報</li>
+        </ul>
+        <h3 class="sub">サーバーに送信されるデータ</h3>
+        <ul>
+          <li>アンケート回答データ（年齢層、アプリの認知経路、利用動機、改善の実感など）</li>
+          <li>匿名化された利用状況データ（Firebase Analytics）</li>
+        </ul>
 
-      <h2>3. 利用目的</h2>
-      <p>収集したデータは、ユーザーご自身の自己管理支援の目的のみに使用されます。アプリ内での進捗の可視化、振り返り機能の提供、リマインダーの送信等に利用します。</p>
+        <h2>3. 利用目的</h2>
+        <p>収集したデータは、ユーザーご自身の自己管理支援の目的のみに使用されます。アプリ内での進捗の可視化、振り返り機能の提供、リマインダーの送信等に利用します。匿名化された利用状況データは、アプリの改善を目的として分析に使用されます。</p>
 
-      <h2>4. データの保存場所</h2>
-      <p>チェックインデータ、呼吸エクササイズの記録、設定情報などの日常利用データは、ユーザーのデバイス上にローカルで保存され、暗号化されています。</p>
-      <p>アンケート回答データは、サービス改善の目的で、Firebase（Google Cloud）上のサーバーに送信・保存されます。送信されるデータには匿名ユーザーIDが含まれますが、氏名・メールアドレス等の個人を直接特定できる情報は含まれません。</p>
+        <h2>4. データの保存場所</h2>
+        <p>チェックインデータ、呼吸エクササイズの記録、設定情報などの日常利用データは、ユーザーのデバイス上にローカルで保存され、暗号化されています。</p>
+        <p>アンケート回答データは、サービス改善の目的で、Firebase（Google Cloud）上のサーバーに送信・保存されます。送信されるデータには匿名ユーザーIDが含まれますが、氏名・メールアドレス等の個人を直接特定できる情報は含まれません。</p>
 
-      <h2>5. 課金サービス・分析ツールについて</h2>
-      <p>本アプリでは、App Store（アプリ内課金）およびRevenueCat（サブスクリプション管理）を利用しています。また、アプリの改善を目的としてFirebase Analyticsを使用し、匿名化された利用状況データを収集しています。これらのサービスの利用に際しては、Apple Inc.およびRevenueCat Inc.のプライバシーポリシーが適用されます。本アプリでは広告の配信は一切行っておりません。</p>
+        <h2>5. 課金サービス・分析ツールについて</h2>
+        <p>本アプリでは、App Store（アプリ内課金）およびRevenueCat（サブスクリプション管理）を利用しています。また、アプリの改善を目的としてFirebase Analyticsを使用し、匿名化された利用状況データを収集しています。これらのサービスの利用に際しては、Apple Inc.およびRevenueCat Inc.のプライバシーポリシーが適用されます。本アプリでは広告の配信は一切行っておりません。</p>
 
-      <h2>6. 第三者への提供</h2>
-      <p>本アプリでは、以下の目的で第三者サービスにデータを送信します。</p>
-      <ul>
-        <li>App Store / RevenueCat：サブスクリプション管理・課金処理</li>
-        <li>Firebase Analytics：匿名化された利用状況データの分析</li>
-        <li>Firebase Firestore：アンケート回答データの保存</li>
-      </ul>
-      <p>上記以外の目的でユーザーのデータを第三者に提供することはありません。</p>
+        <h2>6. 第三者への提供</h2>
+        <p>本アプリでは、以下の目的で第三者サービスにデータを送信します。</p>
+        <ul>
+          <li>App Store / RevenueCat：サブスクリプション管理・課金処理</li>
+          <li>Firebase Analytics：匿名化された利用状況データの分析</li>
+          <li>Firebase Firestore：アンケート回答データの保存</li>
+        </ul>
+        <p>上記以外の目的でユーザーのデータを第三者に提供することはありません。</p>
 
-      <h2>7. データの削除</h2>
-      <p>アプリ内の「設定」→「データをリセット」からすべてのデータを削除できます。また、アプリをアンインストールすることでも、デバイスに保存されたすべてのデータが削除されます。</p>
+        <h2>7. データの削除</h2>
+        <p>アプリ内の「設定」→「データをリセット」からすべてのデータを削除できます。また、アプリをアンインストールすることでも、デバイスに保存されたすべてのデータが削除されます。</p>
 
-      <h2>8. お問い合わせ</h2>
-      <p>本プライバシーポリシーに関するお問い合わせは、以下のメールアドレスまでご連絡ください。</p>
-      <p><a href="mailto:appsupport0326@gmail.com">appsupport0326@gmail.com</a></p>
+        <h2>8. お問い合わせ</h2>
+        <p>本プライバシーポリシーに関するお問い合わせは、以下のメールアドレスまでご連絡ください。</p>
+        <p><a href="mailto:appsupport0326@gmail.com">appsupport0326@gmail.com</a></p>
+      </div>
+
+      <div class="lang-en" hidden>
+        <h2>Privacy Policy</h2>
+        <p class="updated-date">Last updated: March 22, 2026</p>
+
+        <h2>1. Introduction</h2>
+        <p>Rewire (the "App") is an application designed to support self-management and habit improvement. This Privacy Policy explains how we handle personal information within the App.</p>
+
+        <h2>2. Data We Collect</h2>
+        <p>The App collects and records the following data:</p>
+        <h3 class="sub">Stored on your device</h3>
+        <ul>
+          <li>Records related to sexual behavior</li>
+          <li>Mental health data</li>
+          <li>Breathing exercise records</li>
+          <li>Recovery progress records</li>
+          <li>Nickname</li>
+          <li>In-app settings</li>
+        </ul>
+        <h3 class="sub">Sent to servers</h3>
+        <ul>
+          <li>Survey response data (age range, discovery channel, motivation, perceived change, etc.)</li>
+          <li>Anonymized usage data (Firebase Analytics)</li>
+        </ul>
+
+        <h2>3. Purpose of Use</h2>
+        <p>Collected data is used solely for the purpose of supporting your self-management. This includes progress visualization, reflection features, and reminder notifications. Anonymized usage data is used for app improvement purposes.</p>
+
+        <h2>4. Data Storage</h2>
+        <p>Check-in data, breathing exercise records, settings, and other daily usage data are stored locally on your device and encrypted.</p>
+        <p>Survey response data is sent to and stored on Firebase (Google Cloud) servers for service improvement purposes. Transmitted data includes an anonymous user ID but does not contain personally identifiable information such as your name or email address.</p>
+
+        <h2>5. Payment Services & Analytics</h2>
+        <p>The App uses in-app purchases through the App Store and RevenueCat for subscription management. Firebase Analytics is used to collect anonymized usage data for app improvement. Apple Inc. and RevenueCat Inc. privacy policies apply to the use of these services. This App does not serve any advertisements.</p>
+
+        <h2>6. Third-Party Disclosure</h2>
+        <p>The App sends data to the following third-party services:</p>
+        <ul>
+          <li>App Store / RevenueCat: Subscription management and billing</li>
+          <li>Firebase Analytics: Anonymized usage data analysis</li>
+          <li>Firebase Firestore: Survey response data storage</li>
+        </ul>
+        <p>We do not share your data with third parties for any other purposes.</p>
+
+        <h2>7. Data Deletion</h2>
+        <p>You can delete all data from within the App via <strong>Settings → Reset Data</strong>. Uninstalling the App will also delete all locally stored data.</p>
+
+        <h2>8. Contact</h2>
+        <p>For inquiries regarding this Privacy Policy, please contact us at:</p>
+        <p><a href="mailto:appsupport0326@gmail.com">appsupport0326@gmail.com</a></p>
+      </div>
     </div>
 
-    <!-- 利用規約 -->
+    <!-- ============================ -->
+    <!-- Terms of Service              -->
+    <!-- ============================ -->
     <div id="terms" class="page">
-      <h2>利用規約</h2>
-      <p class="updated-date">最終更新日: 2026年3月22日</p>
+      <div class="lang-ja">
+        <h2>利用規約</h2>
+        <p class="updated-date">最終更新日: 2026年2月26日</p>
 
-      <h2>1. 利用規約の適用</h2>
-      <p>本利用規約（以下「本規約」）は、Rewire（以下「本アプリ」）の利用に関する条件を定めるものです。本アプリをダウンロードまたは使用することにより、ユーザーは本規約に同意したものとみなされます。</p>
+        <h2>1. 利用規約の適用</h2>
+        <p>本利用規約（以下「本規約」）は、Rewire（以下「本アプリ」）の利用に関する条件を定めるものです。本アプリをダウンロードまたは使用することにより、ユーザーは本規約に同意したものとみなされます。</p>
 
-      <h2>2. 利用条件</h2>
-      <p>本アプリはポルノ習慣からの回復を支援する目的で提供されています。本アプリをご利用いただくことで、ユーザーは本規約に同意したものとみなします。</p>
+        <h2>2. 利用条件</h2>
+        <p>本アプリはポルノ習慣からの回復を支援する目的で提供されています。本アプリをご利用いただくことで、ユーザーは本規約に同意したものとみなします。</p>
 
-      <h2>3. 免責事項</h2>
-      <p>本アプリは自己管理の支援を目的としたものであり、医療行為やカウンセリングの代替となるものではありません。心身の健康に関する問題については、医師やカウンセラー等の専門家にご相談ください。本アプリの利用により生じたいかなる損害についても、開発者は一切の責任を負いません。</p>
+        <h2>3. 免責事項</h2>
+        <p>本アプリは自己管理の支援を目的としたものであり、医療行為やカウンセリングの代替となるものではありません。心身の健康に関する問題については、医師やカウンセラー等の専門家にご相談ください。本アプリの利用により生じたいかなる損害についても、開発者は一切の責任を負いません。</p>
 
-      <h2>4. 禁止事項</h2>
-      <p>ユーザーは以下の行為を行ってはなりません。</p>
-      <ul>
-        <li>本アプリの不正利用またはリバースエンジニアリング</li>
-        <li>本アプリの機能を利用した違法行為</li>
-        <li>他のユーザーへの迷惑行為</li>
-        <li>本アプリのセキュリティを侵害する行為</li>
-      </ul>
+        <h2>4. 禁止事項</h2>
+        <p>ユーザーは以下の行為を行ってはなりません。</p>
+        <ul>
+          <li>本アプリの不正利用またはリバースエンジニアリング</li>
+          <li>本アプリの機能を利用した違法行為</li>
+          <li>他のユーザーへの迷惑行為</li>
+          <li>本アプリのセキュリティを侵害する行為</li>
+        </ul>
 
-      <h2>5. データの取り扱い</h2>
-      <p>ユーザーのデータの取り扱いについては、<a href="#privacy" onclick="showPage('privacy')">プライバシーポリシー</a>をご確認ください。チェックインデータ等の日常利用データはデバイス上にローカルで保存されます。アンケート回答データは、サービス改善の目的でFirebase（Google Cloud）に送信されます。</p>
+        <h2>5. データの取り扱い</h2>
+        <p>ユーザーのデータの取り扱いについては、<a href="#privacy" data-page="privacy">プライバシーポリシー</a>をご確認ください。チェックインデータ等の日常利用データはデバイス上にローカルで保存されます。アンケート回答データは、サービス改善の目的でFirebase（Google Cloud）に送信されます。</p>
 
-      <h2>6. アプリ内課金について</h2>
-      <p>本アプリでは、以下のサブスクリプションプランを提供しています。</p>
-      <ul>
-        <li>月額プラン（Rewire Pro Monthly）：¥680/月</li>
-        <li>年額プラン（Rewire Pro Annual）：¥5,400/年</li>
-      </ul>
-      <p>いずれのプランにも3日間の無料トライアル期間があります。無料トライアル終了後、サブスクリプション料金がApple IDに請求されます。</p>
-      <p>サブスクリプションは有効期間終了の24時間前までにキャンセルしない限り自動更新されます。解約はiPhoneの「設定」→「Apple ID」→「サブスクリプション」から行うことができます。</p>
+        <h2>6. アプリ内課金について</h2>
+        <p>本アプリでは、以下のサブスクリプションプランを提供しています。</p>
+        <ul>
+          <li>月額プラン（Rewire Pro Monthly）：¥680/月</li>
+          <li>年額プラン（Rewire Pro Annual）：¥5,400/年</li>
+        </ul>
+        <p>いずれのプランにも3日間の無料トライアル期間があります。無料トライアル終了後、サブスクリプション料金がApple IDに請求されます。</p>
+        <p>サブスクリプションは有効期間終了の24時間前までにキャンセルしない限り自動更新されます。解約はiPhoneの「設定」→「Apple ID」→「サブスクリプション」から行うことができます。</p>
 
-      <h2>7. 規約の変更</h2>
-      <p>開発者は、必要に応じて本規約を変更することがあります。重要な変更がある場合は、アプリ内で通知します。変更後も本アプリの利用を継続することにより、変更後の規約に同意したものとみなされます。</p>
+        <h2>7. 規約の変更</h2>
+        <p>開発者は、必要に応じて本規約を変更することがあります。重要な変更がある場合は、アプリ内で通知します。変更後も本アプリの利用を継続することにより、変更後の規約に同意したものとみなされます。</p>
 
-      <h2>8. 準拠法</h2>
-      <p>本規約は日本法に準拠し、日本法に従って解釈されるものとします。本規約に関する紛争については、日本国の裁判所を専属的合意管轄裁判所とします。</p>
+        <h2>8. 準拠法</h2>
+        <p>本規約は日本法に準拠し、日本法に従って解釈されるものとします。本規約に関する紛争については、日本国の裁判所を専属的合意管轄裁判所とします。</p>
+      </div>
+
+      <div class="lang-en" hidden>
+        <h2>Terms of Service</h2>
+        <p class="updated-date">Last updated: February 26, 2026</p>
+
+        <h2>1. Applicability of Terms</h2>
+        <p>These Terms of Service (the "Terms") set forth the conditions for using Rewire (the "App"). By downloading or using the App, you agree to be bound by these Terms.</p>
+
+        <h2>2. Conditions of Use</h2>
+        <p>The App is provided to support recovery from porn habits. By using the App, you are deemed to have agreed to these Terms.</p>
+
+        <h2>3. Disclaimer</h2>
+        <p>The App is intended to support self-management and is not a substitute for medical treatment or counseling. For health-related concerns, please consult a qualified medical professional or counselor. The developer assumes no liability for any damages arising from the use of the App.</p>
+
+        <h2>4. Prohibited Activities</h2>
+        <p>Users must not engage in the following:</p>
+        <ul>
+          <li>Unauthorized use or reverse engineering of the App</li>
+          <li>Illegal activities using the App's features</li>
+          <li>Actions that disturb other users</li>
+          <li>Actions that compromise the App's security</li>
+        </ul>
+
+        <h2>5. Data Handling</h2>
+        <p>Please refer to the <a href="#privacy" data-page="privacy">Privacy Policy</a> for details on data handling. Daily usage data such as check-ins is stored locally on your device. Survey response data is sent to Firebase (Google Cloud) for service improvement purposes.</p>
+
+        <h2>6. In-App Purchases</h2>
+        <p>The App offers the following subscription plans:</p>
+        <ul>
+          <li>Monthly Plan (Rewire Pro Monthly): $4.99/month</li>
+          <li>Annual Plan (Rewire Pro Annual): $39.99/year</li>
+        </ul>
+        <p>Both plans include a 3-day free trial. After the trial period, the subscription fee will be charged to your Apple ID.</p>
+        <p>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period. You can cancel via iPhone <strong>Settings → Apple ID → Subscriptions</strong>.</p>
+
+        <h2>7. Changes to Terms</h2>
+        <p>The developer may modify these Terms as needed. Users will be notified of significant changes within the App. Continued use of the App after changes constitutes acceptance of the modified Terms.</p>
+
+        <h2>8. Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of Japan. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts of Japan.</p>
+      </div>
     </div>
 
   </div>
@@ -331,23 +547,71 @@
   </div>
 
   <script>
+    const TITLES = {
+      ja: 'Rewire - サポート',
+      en: 'Rewire - Support',
+    };
+
     function showPage(id) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      document.querySelector(`nav a[href="#${id}"]`).classList.add('active');
+      const page = document.getElementById(id);
+      if (!page) return;
+      page.classList.add('active');
+      const link = document.querySelector(`nav a[href="#${id}"]`);
+      if (link) link.classList.add('active');
       window.scrollTo(0, 0);
     }
 
-    // Handle direct hash links
-    window.addEventListener('hashchange', () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash && document.getElementById(hash)) {
-        showPage(hash);
-      }
+    function setLang(lang) {
+      if (lang !== 'ja' && lang !== 'en') lang = 'ja';
+      document.documentElement.lang = lang;
+      document.title = TITLES[lang];
+      document.querySelectorAll('.lang-ja').forEach(el => {
+        el.hidden = (lang !== 'ja');
+      });
+      document.querySelectorAll('.lang-en').forEach(el => {
+        el.hidden = (lang !== 'en');
+      });
+      document.querySelectorAll('.lang-toggle button').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      try { localStorage.setItem('rewire-lang', lang); } catch (e) {}
+    }
+
+    // Language toggle handlers
+    document.querySelectorAll('.lang-toggle button').forEach(btn => {
+      btn.addEventListener('click', () => setLang(btn.dataset.lang));
     });
 
-    // Load correct page on initial visit
+    // Intercept in-page nav clicks (and inline links to other sections)
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[data-page]');
+      if (!link) return;
+      e.preventDefault();
+      const id = link.dataset.page;
+      history.pushState(null, '', `#${id}`);
+      showPage(id);
+    });
+
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && document.getElementById(hash)) showPage(hash);
+    });
+
+    // Initial language: stored > browser language > ja
+    let initialLang = 'ja';
+    try {
+      const stored = localStorage.getItem('rewire-lang');
+      if (stored === 'ja' || stored === 'en') {
+        initialLang = stored;
+      } else if (navigator.language && !navigator.language.toLowerCase().startsWith('ja')) {
+        initialLang = 'en';
+      }
+    } catch (e) {}
+    setLang(initialLang);
+
+    // Initial page from hash
     const initialHash = window.location.hash.replace('#', '');
     if (initialHash && document.getElementById(initialHash)) {
       showPage(initialHash);
